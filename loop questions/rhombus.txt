@@ -1,0 +1,17 @@
+int main()
+{
+	ll n;cin>>n;
+	ll temp=n;
+	ll k=n-1;
+	while(temp>0)
+	{
+		for(int i=0;i<k;++i)
+			cout<<" ";
+		for(int i=1;i<=n;++i)
+			cout<<"*";
+		cout<<endl;
+		k-=1;
+		temp-=1;
+	}
+	
+}
