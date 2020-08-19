@@ -1,0 +1,26 @@
+ ListNode* deleteDuplicates(ListNode* head) {
+        ListNode *q=NULL,*last=NULL;
+        set<int> s;
+        set<int>::iterator it;
+        while(head!=0)
+            s.insert(head->val),head=head->next;
+        for(it=s.begin();it!=s.end();it++)
+        {
+            ListNode *t=new ListNode;
+            t->val=*it;
+            t->next=NULL;
+            if(q==NULL)
+            {
+                q=t;
+                last=q;
+            }
+            else
+            {
+                last->next=t;
+                last=t;
+            }
+                
+        }
+        return q;
+    }
+};

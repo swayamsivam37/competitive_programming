@@ -1,0 +1,22 @@
+ListNode* removeElements(ListNode* head, int val) {
+        ListNode *q=NULL,*last=NULL;
+        vector<int> v;
+        while(head!=0)
+        {
+            if(head->val!=val)
+                v.push_back(head->val);
+            head=head->next;
+        }
+        for(int i=0;i<v.size();++i)
+        {
+            ListNode *t=new ListNode;
+            t->val=v[i];
+            t->next=0;
+            if(q==NULL)
+                q=t,last=q;
+            else
+                last->next=t,last=t;
+        }
+        return q;
+    }
+};

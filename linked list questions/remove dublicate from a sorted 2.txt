@@ -1,0 +1,28 @@
+ ListNode* deleteDuplicates(ListNode* head) {
+        ListNode *q=NULL,*last=NULL;
+        map<int,int> mp;
+        map<int,int>::iterator it;
+        while(head!=0)
+            mp[head->val]++,head=head->next;
+        for(it=mp.begin();it!=mp.end();it++)
+        {
+            if(it->second==1)
+            {
+                ListNode *t=new ListNode;
+                t->val=it->first;
+                t->next=NULL;
+                if(q==NULL)
+                {
+                    q=t;
+                    last=q;
+                }
+                else
+                {
+                    last->next=t;
+                    last=t;
+                }
+            }  
+        }
+        return q;
+    }
+};
