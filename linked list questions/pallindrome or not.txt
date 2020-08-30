@@ -1,0 +1,26 @@
+ bool isPalindrome(ListNode* head) {
+       vector<int> v;
+        ListNode *p,*q;
+        while(head!=0)
+        {
+            q=p;
+            p=head;
+            v.push_back(head->val);
+            head=head->next;
+            p->next=q;
+        }
+        bool ans=true;
+        int c=0;
+        while(p!=0)
+        {
+            if(v[c]!=p->val)
+            {
+                ans=false;
+                break;
+            }
+            p=p->next;
+            c++;
+        }
+        return ans;
+            
+    }

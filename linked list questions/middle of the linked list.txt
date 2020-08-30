@@ -1,0 +1,16 @@
+int count(ListNode *head)
+    {
+        int c=0;
+        while(head!=0)
+        {
+            c++;
+            head=head->next;
+        }
+        return c;
+    }
+    ListNode* middleNode(ListNode* head) {
+        int n=count(head);
+            for(int i=1;i<=n/2;++i)
+                head=head->next;
+        return head;
+    }
