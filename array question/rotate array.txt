@@ -1,0 +1,16 @@
+void rotate(vector<int>& nums, int k) {
+        int n=nums.size();
+        if(n==1)
+            return;
+        if(n<=k)
+        {
+             reverse(nums.begin(),nums.end());
+        reverse(nums.begin(),nums.begin()+abs(n-k));
+        reverse(nums.begin()+abs(n-k),nums.end());
+            return;
+        }
+        reverse(nums.begin(),nums.end());
+        reverse(nums.begin(),nums.begin()+k);
+        reverse(nums.begin()+k,nums.end());
+    }
+};
